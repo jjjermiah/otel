@@ -225,6 +225,33 @@ The span object itself, invisibly.
 
 }
 
+\subsection{\code{span$set_attributes()}}{
+
+Set multiple attributes at once. Equivalent to calling
+\code{span$set_attribute()} once per named argument. An empty call is a
+no-op.
+\subsection{Usage}{
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{span$set_attributes(...)
+}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\itemize{
+\item \code{...}: Named attributes to set. Each value must be a character,
+logical, double, or integer vector with no missing values. For
+programmatic use with a named list, use
+\code{do.call(span$set_attributes, named_list)}.
+}
+}
+
+\subsection{Value}{
+
+The span object itself, invisibly.
+}
+
+}
+
 \subsection{\code{span$set_status()}}{
 
 Set the status of the span.

@@ -473,6 +473,30 @@ tracer_noop <- list(
 #' The span object itself, invisibly.
 #'
 # -------------------------------------------------------------------------
+#' ## `span$set_attributes()`
+#'
+#' Set multiple attributes at once. Equivalent to calling
+#' `span$set_attribute()` once per named argument. An empty call is a
+#' no-op.
+#'
+#' ### Usage
+#'
+#' ```r
+#' span$set_attributes(...)
+#' ```
+#'
+#' ### Arguments
+#'
+#' * `...`: Named attributes to set. See [as_attributes()] for supported R
+#'   types and for converting R objects to attribute values. For
+#'   programmatic use with a named list, use
+#'   `do.call(span$set_attributes, named_list)`.
+#'
+#' ### Value
+#'
+#' The span object itself, invisibly.
+#'
+# -------------------------------------------------------------------------
 #' ## `span$set_status()`
 #'
 #' Set the status of the span.
@@ -559,6 +583,10 @@ span_noop <- list(
         },
 
         set_attribute = function(name, value = NULL) {
+          invisible(self)
+        },
+
+        set_attributes = function(...) {
           invisible(self)
         },
 

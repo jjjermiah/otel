@@ -238,8 +238,8 @@ no-op.
 
 \subsection{Arguments}{
 \itemize{
-\item \code{...}: Named attributes to set. Each value must be a character,
-logical, double, or integer vector with no missing values. For
+\item \code{...}: Named attributes to set. See \code{\link[=as_attributes]{as_attributes()}} for supported R
+types and for converting R objects to attribute values. For
 programmatic use with a named list, use
 \code{do.call(span$set_attributes, named_list)}.
 }
